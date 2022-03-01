@@ -9,8 +9,9 @@
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
-      <td>Mark</td>
+      <td>{{ saldoTable }}</td>
+      <td v-if="estadotable">Activo</td>
+      <td v-else>Inactivo</td>
     </tr>
   </tbody>
 </table>
@@ -19,7 +20,10 @@
 
 <script>
 export default {
-
+  props: {
+    saldoTable: Number,
+    estadotable: Boolean
+  }
 }
 </script>
 
