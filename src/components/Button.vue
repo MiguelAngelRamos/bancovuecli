@@ -1,6 +1,6 @@
 <template>
  <!-- <h3>Los botones</h3> -->
-  <button :class="colorBoton">{{ tipobtn }}</button>
+  <button :class="colorBoton" v-on:click="accionBtn">{{ tipobtn }}</button>
 </template>
 
 <script>
@@ -11,6 +11,11 @@ export default {
   computed: {
     colorBoton() {
       return this.tipobtn ==="Agregar Saldo"? 'btn btn-success': 'btn btn-danger'
+    }
+  },
+  methods: {
+    accionBtn() {
+      this.$emit('accion');
     }
   }
 }

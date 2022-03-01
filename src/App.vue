@@ -3,9 +3,9 @@
   <div class="container mt-5 col-sm-6 offset-sm-3">
     <h3 class="text-center">{{titulo}}</h3>
     <Table :saldoTable="saldo" :estadotable="estado"/>
-
-    <Button tipobtn="Agregar Saldo"/>
-    <Button tipobtn="Disminuir Saldo"/>
+    <!-- emit -->
+    <Button tipobtn="Agregar Saldo" @accion="agregarSaldo"/>
+    <Button tipobtn="Disminuir Saldo" @accion="disminuirSaldo" />
   
 
   </div>
@@ -34,10 +34,10 @@ export default {
   },
   methods: {
     agregarSaldo() {
-      this.saldo = this.saldo + 1000;
+      this.saldo = this.saldo + 150000;
     },
     disminuirSaldo() {
-      this.saldo = this.saldo - 1000;
+      this.saldo = this.saldo - 100000;
     }
   }
 }
